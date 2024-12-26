@@ -8,7 +8,7 @@ const BASE_URL =
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
-  isSigningIn: false,
+  isSigningUp: false,
   isLoggingIn: false,
   isUpdatingProfile: false,
   isCheckingAuth: true,
@@ -29,7 +29,7 @@ export const useAuthStore = create((set, get) => ({
 
   signup: async (data) => {
     try {
-      set({ isSigningIn: true });
+      set({ isSigningUp: true });
       const res = await axiosInstance.post("/auth/signup", data);
       set({ authUser: res.data });
       toast.success("Account created successfully");
@@ -37,7 +37,7 @@ export const useAuthStore = create((set, get) => ({
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {
-      set({ isSigningIn: false });
+      set({ isSigningUp: false });
     }
   },
 
