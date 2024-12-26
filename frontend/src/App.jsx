@@ -26,8 +26,6 @@ const App = () => {
       </div>
     );
 
-  console.log({ authUser });
-
   return (
     <div data-theme={theme}>
       <Navbar />

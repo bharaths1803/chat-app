@@ -30,7 +30,6 @@ const MessageInput = () => {
     e.preventDefault();
     if (!text.trim() && !imagePreview) return;
     try {
-      console.log(text, imagePreview);
       await sendMessage({
         text: text.trim(),
         image: imagePreview,
