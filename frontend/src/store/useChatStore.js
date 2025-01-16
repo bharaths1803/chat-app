@@ -13,7 +13,7 @@ export const useChatStore = create((set, get) => ({
 
   getUsers: async () => {
     try {
-      set({ isUsersLoading: false });
+      set({ isUsersLoading: true });
       const res = await axiosInstance.get("/messages/users");
       set({ users: res.data });
     } catch (error) {
